@@ -67,11 +67,13 @@
 
 
 .modal-success {
-  background: #d1f4d9; 
+  background: #d1f4d9;
+  color: #898684;
 }
 
 .modal-warning {
   background: #e8adb3; 
+  color: #868584;
 }
 .modal-overlay {
   position: fixed;
@@ -87,8 +89,8 @@
 }
 
 .notification-success {
-  background-color: #efd6bd;
-  color: #cc8259;
+  /*background-color: #efd6bd;
+  color: #cc8259;*/
   padding: 2rem;
   border: 1px solid #cc8259;
   border-radius: 0.5rem;

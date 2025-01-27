@@ -1,6 +1,6 @@
 import { useState, useEffect  } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { motion } from "motion/react"
+import { useSelector, useDispatch } from "react-redux";
 import useForm from "../Hooks/useForm.js";
 import ModalInfo from "../../Components/Modals/ModalInfo.jsx";
 import { setUsername, setEmail } from "../../store/features/Form/FormSlice.js";
@@ -56,7 +56,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
         >
             <ModalInfo
                 visible={showModal}
-                message={modalType === "success" ? 'Login Success ' + formData.username : "Error: Username/Password incorrectos"}
+                message={modalType === "success" ? 'Bienvenido: ' + formData.username : "Error: Username/Password incorrectos!!!"}
                 type={modalType}
                 onClose={onCloseModalInfo}
             />
