@@ -30,7 +30,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
         }
         else {
             console.log('password ingresado', formData.password);
-            console.log('password de inicio', passwordinicio);
+            console.log('password defaut', initPassword);
             dispatch(setUsername(''));
             dispatch(setEmail(''));
             setModalType("warning");

@@ -11,8 +11,9 @@ const Navigator = () => {
             <Link to="/counter" className="nav-link">Counter</Link>
             <Link to="/think" className="nav-link">Think</Link>
             <Link to="/product" className="nav-link">Product</Link>
-            <span to="/" className="nav-username"> Bienvenido {username} || {email}</span>
             <Link to="/about" className="nav-link">About</Link>
+            <span to="/" className="nav-username"> Bienvenido {username} | {email}</span>
+            <Link to="/logout" className="nav-link">Logout</Link>
         </nav>
     );
 }
