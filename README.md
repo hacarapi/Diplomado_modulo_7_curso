@@ -1,4 +1,4 @@
-# Practica 1
+# Practica Final
 
 - Huber Acarapi Mamani
   
@@ -6,6 +6,8 @@ DIPLOMADO EN FULLSTACK DEVELOPER BACK END Y FRONT END SEXTA VERSIÓN
 Mod7: Desarrollo Front End con React
 
 [https://github.com/hacarapi/Diplomado_modulo_7_curso](https://github.com/hacarapi/Diplomado_modulo_7_curso) 
+
+[https://hacarapi.github.io/Diplomado_modulo_7_curso/](https://hacarapi.github.io/Diplomado_modulo_7_curso/)
 
 # Intalacion
 Creamos el proyecto curso-de-react
