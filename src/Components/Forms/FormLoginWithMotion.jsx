@@ -60,7 +60,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
                 type={modalType}
                 onClose={onCloseModalInfo}
             />
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
                 <motion.div
                     initial={{ x: -100 }}
                     animate={{ x: 0 }}
