@@ -7,7 +7,7 @@ const ProductPage = () => {
 
   return (
     <div>
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '20px', marginTop: '50px' }}>
         <input
           type="text"
           placeholder="Search products..."

@@ -19,6 +19,9 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload
     },
+    modifyIsLogged: (state, action) => {
+        state.isLogged = action.payload
+    }
   },
 })
 

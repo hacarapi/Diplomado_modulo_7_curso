@@ -1,8 +1,4 @@
-//import Logo from '../Components/Home/Logo.jsx';
-//import GitHub from '../Components/Home/Github.jsx'
-
 import OpenLink from "../Components/Core/OpenLink.jsx";
-
 import Body from '../Components/Home/Body.jsx';
 import Footer from '../Components/Home/Footer.jsx';
 
@@ -22,10 +18,7 @@ const Home = () =>{
             <OpenLink redirectURL="https://vite.dev" logoImage={viteLogo} />
             <OpenLink redirectURL="https://react.dev" logoImage={reactLogo} />
             <OpenLink redirectURL="https://github.com/hacarapi/Diplomado_modulo_7_curso" logoImage={githubLogo} />
-            </div>
-           {/* <Logo />
-            <GitHub />*/}
-            
+            </div>            
             <Body />
             <Footer />
         </div>

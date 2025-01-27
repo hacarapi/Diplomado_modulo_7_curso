@@ -1,13 +1,19 @@
 import {Link} from "react-router";
+import { useSelector } from "react-redux";
 
 const Navigator = () => {
+    const {username, email}= useSelector (state => state.form);
     return (
         <nav className="navbar">
-            <Link to="/" className="nav-link">Home</Link>                    {/* http://localhost:5173/  */}
-            <Link to="/counter" className="nav-link">Counter</Link>          {/* http://localhost:5173/counter  */}
-            <Link to="/think" className="nav-link">Think</Link>              {/* http://localhost:5173/think  */}
-            <Link to="/products" className="nav-link">Product</Link>         {/* http://localhost:5173/products  */}
-            <Link to="/about" className="nav-link">About</Link>              {/* http://localhost:5173/about  */}
+            
+            <Link to="/" className="nav-link">LandingPage</Link>
+            <Link to="/home" className="nav-link">Home</Link>
+            <Link to="/login" className="nav-link">Login</Link>
+            <Link to="/counter" className="nav-link">Counter</Link>
+            <Link to="/think" className="nav-link">Think</Link>
+            <Link to="/products" className="nav-link">Product</Link>
+            <span to="/" className="nav-username"> Bienvenido {username} || {email}</span>
+            <Link to="/about" className="nav-link">About</Link>
         </nav>
     );
 }

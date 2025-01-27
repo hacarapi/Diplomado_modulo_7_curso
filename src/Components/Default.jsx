@@ -5,12 +5,12 @@ import viteLogo from '/vite.svg'
 const Default = () => {
     const [count, setCount] = useState(0)
     return(
-       <div>
+        <div>
             
             <h1>Vite + React</h1>
 
-            <h2>DIPLIMADO FULL STACK</h2>
-            <h3>MOD 7: CURSO DE REACT</h3>
+            <h2>DIPLOMADO FULL STACK</h2>
+            <h3>Módulo 7 - Desarrollo Frontend Con Reactjs</h3>
 
             <div className="card">
                 <button onClick={() => setCount((count) => count + 1)}>
@@ -23,7 +23,7 @@ const Default = () => {
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
-       </div>
+        </div>
     )
 };
 
