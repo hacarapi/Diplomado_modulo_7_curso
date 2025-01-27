@@ -5,11 +5,10 @@ on:
     branches:
       - main
 
-
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Especificar una versión específica de Ubuntu
 
     steps:
       - name: Checkout repo
@@ -28,7 +27,7 @@ jobs:
         run: cp ./dist/index.html ./dist/404.html
 
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # Actualizado a v4
         with:
           name: production-files
           path: ./dist
@@ -36,12 +35,12 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-22.04 # Especificar una versión específica de Ubuntu
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4 # Actualizado a v4
         with:
           name: production-files
           path: ./dist
