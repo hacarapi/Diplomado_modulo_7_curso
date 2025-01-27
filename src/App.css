@@ -65,6 +65,14 @@
   color: #5378c3;
 } 
 
+
+.modal-success {
+  background: #d1f4d9; 
+}
+
+.modal-warning {
+  background: #e8adb3; 
+}
 .modal-overlay {
   position: fixed;
   top: 0;

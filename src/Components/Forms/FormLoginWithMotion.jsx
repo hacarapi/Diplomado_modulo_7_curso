@@ -1,38 +1,40 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect  } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { motion } from "motion/react"
 import useForm from "../Hooks/useForm.js";
 import ModalInfo from "../../Components/Modals/ModalInfo.jsx";
+import { setUsername, setEmail } from "../../store/features/Form/FormSlice.js";
 
 // eslint-disable-next-line react/prop-types
 const FormWithMotionAndHook = ({titleForm}) => {
-    const { formData, handleChange, resetForm } = useForm({
-        username: "",
-        email: "",
-        password: "",
-    });
-
-    const { module, username, email, password } = useSelector((state) => state.form);
+    const dispatch = useDispatch();
+    const FormState = useSelector((state) => state.form);
+    const { formData, handleChange, resetForm, setFormData  } = useForm(FormState);
     const [showModal, setShowModal] = useState(false);
     const [modalType, setModalType] = useState("success");
-    const [showPassword, setShowPassword] = useState(false); 
+    const [showPassword, setShowPassword] = useState(false);
+    const initPassword = useSelector((state) => state.form.password); 
+
+    useEffect(() => {
+        setFormData({ ...FormState });
+    }, [FormState, setFormData]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const isValid =
-            username === "hacarapi" &&
-            email === "huber.acarapi@gmail.com" &&
-            password === "mod7USIP-HUBER";
-        //Modal correcto
-        if (isValid) {
+        if (initPassword === formData.password) {
+            dispatch(setUsername(formData.username));
+            dispatch(setEmail(formData.email));
+            console.log('datos del formulario', formData);
             setModalType("success");
             setShowModal(true);
-            console.log("¡Logeado hacarapi!");
-        //Modal Incorrecto
-        } else {
-            setModalType("error");
+        }
+        else {
+            console.log('password ingresado', formData.password);
+            console.log('password de inicio', passwordinicio);
+            dispatch(setUsername(''));
+            dispatch(setEmail(''));
+            setModalType("warning");
             setShowModal(true);
-            console.log("Error: Username/Password incorrectos");
         }
     };
 
@@ -42,6 +44,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
 
     const onCloseModalInfo = () => {
         setShowModal(false);
+        resetForm();  // Resetear el formulario al cerrar el modal
     };
 
     return (
@@ -53,7 +56,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
         >
             <ModalInfo
                 visible={showModal}
-                message={modalType === "success" ? "¡Logeado hacarapi!" : "Error: Username/Password incorrectos"}
+                message={modalType === "success" ? 'Login Success ' + formData.username : "Error: Username/Password incorrectos"}
                 type={modalType}
                 onClose={onCloseModalInfo}
             />
@@ -76,7 +79,8 @@ const FormWithMotionAndHook = ({titleForm}) => {
                             <input
                                 type="text"
                                 name="module"
-                                value={module}
+                                value={formData.module}
+                                readOnly
                                 disabled
                             />
                         </label>
@@ -93,7 +97,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
                             <input
                                 type="text"
                                 name="username"
-                                value={username}
+                                value={formData.username}
                                 onChange={handleChange}
                                 required
                             />
@@ -111,7 +115,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
                             <input
                                 type="email"
                                 name="email"
-                                value={email}
+                                value={formData.email}
                                 onChange={handleChange}
                                 required
                             />
@@ -127,7 +131,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
                             <input
                                 type={showPassword ? "text" : "password"} // Cambio de viualizacion del password
                                 name="password"
-                                value={password}
+                                value={formData.password}
                                 onChange={handleChange}
                                 required
                             />
