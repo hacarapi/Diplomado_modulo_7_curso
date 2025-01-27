@@ -1,34 +1,36 @@
 import { useState } from "react";
-import { motion } from "motion/react"
 import { useSelector } from "react-redux";
+import { motion } from "motion/react"
 import useForm from "../Hooks/useForm.js";
 import ModalInfo from "../../Components/Modals/ModalInfo.jsx";
 
 // eslint-disable-next-line react/prop-types
 const FormWithMotionAndHook = ({titleForm}) => {
-    const {formData, handleChange, resetForm} = useForm({
-        username: '',
-        email: ''
+    const { formData, handleChange, resetForm } = useForm({
+        username: "",
+        email: "",
+        password: "",
     });
 
     const { module, username, email, password } = useSelector((state) => state.form);
     const [showModal, setShowModal] = useState(false);
-    const [modalType, setModalType] = useState("success"); // Estado para el tipo de modal
-    const [showPassword, setShowPassword] = useState(false); // Constante que maneja el cambio de estado del password
+    const [modalType, setModalType] = useState("success");
+    const [showPassword, setShowPassword] = useState(false); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const isValid =
-            username === "romoldes" &&
-            email === "moldesrodrigor@gmail.com" &&
-            password === "mod7USIP-RODRIMOLDES";
-
+            username === "hacarapi" &&
+            email === "huber.acarapi@gmail.com" &&
+            password === "mod7USIP-HUBER";
+        //Modal correcto
         if (isValid) {
-            setModalType("success"); // Modal verde
+            setModalType("success");
             setShowModal(true);
-            console.log("¡Logeado romoldes!");
+            console.log("¡Logeado hacarapi!");
+        //Modal Incorrecto
         } else {
-            setModalType("error"); // Modal rojo
+            setModalType("error");
             setShowModal(true);
             console.log("Error: Username/Password incorrectos");
         }
@@ -51,7 +53,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
         >
             <ModalInfo
                 visible={showModal}
-                message={modalType === "success" ? "¡Logeado romoldes!" : "Error: Username/Password incorrectos"}
+                message={modalType === "success" ? "¡Logeado hacarapi!" : "Error: Username/Password incorrectos"}
                 type={modalType}
                 onClose={onCloseModalInfo}
             />

@@ -9,22 +9,18 @@ const LogoutModal = () => {
     const [showModal, setShowModal] = useState(true); 
 
     const handleLogout = () => {
-        
         dispatch(logout());
-      
         navigate('/Login');
         setShowModal(false); 
     };
 
     const closeModal = () => {
-        setShowModal(false); 
-       
+        setShowModal(false);
         navigate('/');
     };
 
     return (
         <>
-           
             {showModal && (
                 <div style={styles.modalOverlay}>
                     <div style={styles.modalContent}>

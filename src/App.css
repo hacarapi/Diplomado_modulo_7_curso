@@ -100,3 +100,47 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+.text-header { 
+  width: 100%;
+  font-family: sans-serif; 
+  font-size: 16px; 
+  font-weight: 400; 
+  color: #ffffff; 
+  background:#0cba49;
+}
+.text-subheader { 
+  width: 100%;
+  text-align: left;
+  font-family: sans-serif; 
+  font-weight: 400; 
+  line-height:1px;
+  color: #f8f4f4; 
+}
+.text-parrafo { 
+  width: 100%;
+  text-align: justify;
+  font-family: sans-serif; 
+  font-size: 16px;
+  font-weight: 400; 
+  line-height:2;
+  color: #fcf8f8; 
+}
+.linea {
+  width: 100%;
+  border-top: 1px solid rgb(77, 227, 162);
+  height: 2px;
+  padding: 0;
+  line-height:3px;
+}
+.container {
+  width: 200px;
+  text-align:left;
+  font-family: sans-serif; 
+  font-size: 16px;
+  font-weight: 400;
+}
+section{
+  display: flex;
+  column-gap: 20px;
+}

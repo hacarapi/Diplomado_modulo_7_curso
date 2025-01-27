@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-//import { store } from './store/store.js';
 import store from './store/store.js';
 import { Provider } from 'react-redux';
 
@@ -13,7 +12,7 @@ import App from './App.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/Diplomado_modulo_7_curso/">
         <App />
       </BrowserRouter>
     </Provider>

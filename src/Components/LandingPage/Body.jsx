@@ -1,6 +1,6 @@
 const Body = () => {
     return (
-        <div>
+        <div className="body-background">
             <div className="text-subheader">
                 <h2>Bienvenido</h2>
                 <div className="linea"></div>
@@ -43,10 +43,8 @@ const Body = () => {
                 <div className="linea"></div>
                 <span className="text-parrafo">
                     Para profundizar en los temas cubiertos, consulta los siguientes recursos:
-
                 </span>
             </div>
-
         </div>
     )
 };

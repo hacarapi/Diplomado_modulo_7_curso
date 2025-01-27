@@ -1,11 +1,10 @@
-import {Link} from "react-router";
+import { Link } from "react-router";
 import { useSelector } from "react-redux";
 
 const Navigator = () => {
     const {username, email}= useSelector (state => state.form);
     return (
         <nav className="navbar">
-            
             <Link to="/" className="nav-link">LandingPage</Link>
             <Link to="/home" className="nav-link">Home</Link>
             <Link to="/login" className="nav-link">Login</Link>

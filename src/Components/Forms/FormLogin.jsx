@@ -14,7 +14,6 @@ const FormLogin = ({ titleForm }) => {
 
     const handleChange = (event) => {
         // debugger;
-        // console.log(event);
         const { name, value } = event.target;
         setFormData({
             ...formData,
